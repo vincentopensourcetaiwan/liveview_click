@@ -3,11 +3,12 @@ defmodule LiveviewClickWeb.Click do
 
   def render(assigns) do
     ~H"""
-    <.button>Send!</.button>
+    <.button><%= @counter %></.button>
     """
   end
 
   def mount(_params, _session, socket) do
+    socket = assign(socket, counter: 0)
     {:ok, socket}
   end
 end
